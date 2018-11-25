@@ -17,10 +17,10 @@ namespace PayrollManagement.Model
         private int socialNumber;
         private int employeeId;
         private String password;
-        private int payRate;
+        private double payRate;
 
 
-        public int PayRate { get => payRate; set => payRate = value; }
+        public double PayRate { get => payRate; set => payRate = value; }
         public int Position { get => position; set => position = value; }
         public string FirstName { get => firstName; set => firstName = value; }
         public string LastName { get => lastName; set => lastName = value; }
@@ -44,7 +44,7 @@ namespace PayrollManagement.Model
             }
         }
 
-        public Employee(String firstName, String lastName, int age, String address, long phoneNumber, String email, int position, int payRate, int socialNumber)
+        public Employee(String firstName, String lastName, int age, String address, long phoneNumber, String email, int position, double payRate, int socialNumber)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -55,6 +55,17 @@ namespace PayrollManagement.Model
             this.Position = position;
             this.PayRate = payRate;
             this.SocialNumber = socialNumber;
+        }
+
+        //Secondary Constructor needed in the connection class to get 
+        public Employee(String firstName, String lastName, int age, String address, long phoneNumber, String email)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Age = age;
+            this.Address = address;
+            this.PhoneNumber = phoneNumber;
+            this.Email = email;
         }
 
         public enum POSITION

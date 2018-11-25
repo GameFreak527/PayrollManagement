@@ -79,6 +79,8 @@
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="PasswordChange.aspx" />
+    <Content Include="Paystub Employee Choice Page.aspx" />
+    <Content Include="Paystub Page.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="StyleSheet.css" />
     <Content Include="Web.config" />
@@ -117,6 +119,20 @@
     </Compile>
     <Compile Include="PasswordChange.aspx.designer.cs">
       <DependentUpon>PasswordChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paystub Employee Choice Page.aspx.cs">
+      <DependentUpon>Paystub Employee Choice Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paystub Employee Choice Page.aspx.designer.cs">
+      <DependentUpon>Paystub Employee Choice Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paystub Page.aspx.cs">
+      <DependentUpon>Paystub Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paystub Page.aspx.designer.cs">
+      <DependentUpon>Paystub Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.aspx.cs">
