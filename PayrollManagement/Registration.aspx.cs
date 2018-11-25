@@ -31,7 +31,7 @@ namespace PayrollManagement
             string address = addressTxtBox.Text;
             string email = emailTxtBox.Text;
             long phoneNumber = long.Parse(numberTxtBox.Text);
-            int pay = int.Parse(payRate.Text);
+            long pay = long.Parse(payRate.Text);
             int socialNumber = int.Parse(SINTxtBox.Text);
 
             try

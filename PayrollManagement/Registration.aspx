@@ -88,7 +88,7 @@
                         </td>
                         <td>
                             <asp:TextBox runat="server" ID="SINTxtBox" MaxLength="9" />
-                            <asp:RangeValidator ID="SINRange" runat="server" ErrorMessage="SIN number must be 9 Digits" MinimumValue="8" MaximumValue="9" ControlToValidate="SINTxtBox"></asp:RangeValidator>
+                            <%--<asp:RangeValidator ID="SINRange" runat="server" ErrorMessage="SIN number must be 9 Digits" ValidationExpression="^.{8,9}$" ControlToValidate="SINTxtBox"></asp:RangeValidator>--%>
                             <asp:RequiredFieldValidator ID="SINValidator" runat="server" ErrorMessage="SIN number must be 9 Digits" ControlToValidate="SINTxtBox"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
