@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Employee Detail.aspx" />
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -86,6 +87,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Employee Detail.aspx.cs">
+      <DependentUpon>Employee Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee Detail.aspx.designer.cs">
+      <DependentUpon>Employee Detail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Model\ConnectionClass.cs" />
     <Compile Include="Controller\Database.cs" />
     <Compile Include="Index.aspx.cs">
