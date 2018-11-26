@@ -40,7 +40,7 @@
 <li><a href="#">
     <asp:ImageButton ID="ImageButton6" runat="server" Height="32px" ImageAlign="AbsMiddle" ImageUrl="~/images/icons/employeeicon.png" Width="35px" />
     &nbsp;Employee info</a></li>
-<li><a href="#">
+<li><a href="Notification.aspx">
     <asp:ImageButton ID="ImageButton7" runat="server" Height="30px" ImageAlign="AbsMiddle" ImageUrl="~/images/icons/notifyicon.png" Width="32px" />
     Notification</a></li>
 </ul>

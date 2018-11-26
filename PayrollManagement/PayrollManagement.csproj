@@ -79,6 +79,7 @@
   <ItemGroup>
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Notification.aspx" />
     <Content Include="PasswordChange.aspx" />
     <Content Include="Paystub Employee Choice Page.aspx" />
     <Content Include="Paystub Page.aspx" />
@@ -121,6 +122,13 @@
     <Compile Include="Model\Exceptions\InvalidAgeGroup.cs" />
     <Compile Include="Model\PaystubInfo.cs" />
     <Compile Include="Model\TaxManagement.cs" />
+    <Compile Include="Notification.aspx.cs">
+      <DependentUpon>Notification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notification.aspx.designer.cs">
+      <DependentUpon>Notification.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PasswordChange.aspx.cs">
       <DependentUpon>PasswordChange.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
