@@ -17,7 +17,7 @@ public static class ConnectionClass
     static ConnectionClass()
     {
 
-        cn = new SqlConnection(@"Data Source=LAPTOP-47BNNCUR\COMP229_SQL;Initial Catalog=Software_ProjectDB;Integrated Security=True");
+        cn = new SqlConnection(@"Data Source=GAMEFREAK;Initial Catalog=Software_ProjectDB;Integrated Security=True");
     }
 
 
