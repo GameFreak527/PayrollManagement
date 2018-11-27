@@ -31,10 +31,10 @@ namespace PayrollManagement
                 {
                     txtFname.Text = mdr["firstName"].ToString();
                     txtLname.Text = mdr["lastName"].ToString();
-                    txtPhone.Text = mdr["phoneNumber"].ToString();
+                    txtPhone.Text = mdr["phoneNum"].ToString();
                     txtEmail.Text = mdr["email"].ToString();
                     lblSSN.Visible = true;
-                    lblSSN.Text = mdr["socialNumber"].ToString();
+                    lblSSN.Text = mdr["social_security_num"].ToString();
                     txtAdd1.Text = mdr["address"].ToString();
                 }
                 conn.Close();
@@ -69,7 +69,7 @@ namespace PayrollManagement
 
                 conn.Open();
                 String queryDisplay = "SELECT * FROM Employee WHERE EmployeeID = " + int.Parse(txtEmpId.Text);
-                String queryUpdate = "UPDATE Employee SET phoneNumber='" + this.txtPhone.Text + "', email='" + this.txtEmail.Text + "', address='" + this.txtAdd1.Text + "' WHERE EmployeeID = '" + this.txtEmpId.Text + "'";
+                String queryUpdate = "UPDATE Employee SET firstName='" + this.txtFname.Text + "', lastName='" + this.txtLname.Text + "',phoneNum='" + this.txtPhone.Text + "', email='" + this.txtEmail.Text + "', address='" + this.txtAdd1.Text + "' WHERE EmployeeID = '" + this.txtEmpId.Text + "'";
                 SqlCommand cmd = new SqlCommand(queryUpdate, conn);
                 SqlCommand cmd1 = new SqlCommand(queryDisplay, conn);
                 SqlDataReader mdr = cmd.ExecuteReader();
@@ -78,9 +78,9 @@ namespace PayrollManagement
                 {
                     txtFname.Text = mdr["firstName"].ToString();
                     txtLname.Text = mdr["lastName"].ToString();
-                    txtPhone.Text = mdr["phoneNumber"].ToString();
+                    txtPhone.Text = mdr["phoneNum"].ToString();
                     txtEmail.Text = mdr["email"].ToString();
-                    lblSSN.Text = mdr["socialNumber"].ToString();
+                    lblSSN.Text = mdr["social_security_num"].ToString();
                     txtAdd1.Text = mdr["address"].ToString();
                 }
                 conn.Close();

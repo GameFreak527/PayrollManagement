@@ -37,7 +37,7 @@
 <li><a href="Paystub Employee Choice Page.aspx">
     <asp:ImageButton ID="ImageButton5" runat="server" Height="32px" ImageAlign="AbsMiddle" ImageUrl="~/images/icons/paystubicon.png" Width="28px" />
     &nbsp;Paystub</a></li>
-<li><a href="#">
+<li><a href="Employee Detail.aspx">
     <asp:ImageButton ID="ImageButton6" runat="server" Height="32px" ImageAlign="AbsMiddle" ImageUrl="~/images/icons/employeeicon.png" Width="35px" />
     &nbsp;Employee info</a></li>
 <li><a href="Notification.aspx">
