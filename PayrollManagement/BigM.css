@@ -17,12 +17,12 @@ a {
     }
 
 #wrap {
-    width: 800px;
+    width: 1200px;
     margin: 20px auto;
 }
 
 #header {
-    background: url(images/header.png) no-repeat;
+    background: url(images/header2.png) no-repeat;
     height: 130px;
 }
 
@@ -59,7 +59,7 @@ a {
 }
 
 .pad {
-    margin-right: 250px;
+    margin-right: 625px;
 }
 
 #header h2 {
@@ -74,7 +74,7 @@ table {
 }
 
 #menu {
-    background: url(images/menu.png) no-repeat;
+    background: url(images/menu2.png) no-repeat;
     height: 30px;
     line-height: 30px;
 }
@@ -82,7 +82,7 @@ table {
     #menu ul {
         list-style-type: none;
         margin: 0;
-        padding-left: 70px;
+        padding-left: 180px;
     }
 
         #menu ul li {
@@ -92,7 +92,7 @@ table {
 
             #menu ul li a {
                 display: block;
-                padding: 0 5px 0 5px;
+                padding: 0 25px 0 25px;
                 text-decoration: none;
                 color: #fff;
                 font-size: 12px;
@@ -104,6 +104,7 @@ table {
                     color: #fff;
                     background: url(images/menuover.png) repeat-x;
                 }
+
 #menuEmp {
     background: url(images/menu.png) no-repeat;
     height: 30px;
@@ -135,6 +136,7 @@ table {
                     color: #fff;
                     background: url(images/menuover.png) repeat-x;
                 }
+
 #menuAdmin {
     background: url(images/menu.png) no-repeat;
     height: 30px;
@@ -168,7 +170,7 @@ table {
                 }
 
 #contentwrap {
-    background: url(images/content.png) repeat-y;
+    background: url(images/content2.png) repeat-y;
     padding: 0 30px 0 20px;
 }
 
@@ -179,36 +181,37 @@ table {
 }
 
 #contentBig {
-    float: left;
-    width: 700px;
+    float: none;
+    width: 1100px;
     margin-top: 20px;
+    padding-left: 35px;
 }
 
-    #content h2 {
-        margin: 0;
-        color: #5797F2;
-        line-height: 30px;
-        font-size: 19px;
-        font-weight: 100;
-        letter-spacing: -1px;
-    }
+#content h2 {
+    margin: 0;
+    color: #5797F2;
+    line-height: 30px;
+    font-size: 19px;
+    font-weight: 100;
+    letter-spacing: -1px;
+}
 
-    #content h3 {
-        margin: 0;
-        color: #232323;
-        font-size: 14px;
-        font-weight: 100;
-    }
+#content h3 {
+    margin: 0;
+    color: #232323;
+    font-size: 14px;
+    font-weight: 100;
+}
 
-    #content p {
-        padding: 0 0 10px 0;
-        color: #232323;
-    }
+#content p {
+    padding: 0 0 10px 0;
+    color: #232323;
+}
 
-    #content ul {
-        padding: 0 20px 10px 30px;
-        color: #232323;
-    }
+#content ul {
+    padding: 0 20px 10px 30px;
+    color: #232323;
+}
 
 #sidebar {
     float: left;
@@ -251,7 +254,7 @@ table {
         }
 
 #footer {
-    background: url(images/footer.png) no-repeat;
+    background: url(images/footer2.png) no-repeat;
     text-align: center;
     color: #fff;
     height: 70px;

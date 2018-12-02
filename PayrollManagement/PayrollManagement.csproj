@@ -68,6 +68,9 @@
   <ItemGroup>
     <Content Include="Employee Detail.aspx" />
     <Content Include="MasterPage.Master" />
+    <Content Include="MasterPageEmp.Master" />
+    <Content Include="MasterPageAdmin.Master" />
+    <Content Include="MasterPageBigMac.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -85,6 +88,7 @@
     <Content Include="Paystub Page.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="StyleSheet.css" />
+    <Content Include="BigM.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +98,27 @@
     </Compile>
     <Compile Include="Employee Detail.aspx.designer.cs">
       <DependentUpon>Employee Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageAdmin.Master.cs">
+      <DependentUpon>MasterPageAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageAdmin.Master.designer.cs">
+      <DependentUpon>MasterPageAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageBigMac.Master.cs">
+      <DependentUpon>MasterPageBigMac.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageBigMac.Master.designer.cs">
+      <DependentUpon>MasterPageBigMac.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageEmp.Master.cs">
+      <DependentUpon>MasterPageEmp.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageEmp.Master.designer.cs">
+      <DependentUpon>MasterPageEmp.Master</DependentUpon>
     </Compile>
     <Compile Include="Model\ConnectionClass.cs" />
     <Compile Include="Controller\Database.cs" />
