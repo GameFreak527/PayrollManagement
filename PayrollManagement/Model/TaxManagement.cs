@@ -587,4 +587,20 @@ public static class TaxManagement
         return incomeTax;
 
     }
+
+    public enum PROVINCE
+    {
+        ON = 1,
+        MB = 2,
+        QC = 3,
+        AB = 4,
+        SK = 5,
+        NL = 6,
+        BC = 7,
+        NS = 8,
+        NB = 9,
+        YT = 10,
+        NT = 11,
+        NU = 12
+    }
 }

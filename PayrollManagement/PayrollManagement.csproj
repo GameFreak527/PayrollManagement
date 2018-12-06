@@ -87,6 +87,7 @@
     <Content Include="Paystub Employee Choice Page.aspx" />
     <Content Include="Paystub Page.aspx" />
     <Content Include="Registration.aspx" />
+    <Content Include="Setup.aspx" />
     <Content Include="StyleSheet.css" />
     <Content Include="BigM.css" />
     <Content Include="Web.config" />
@@ -182,6 +183,13 @@
     </Compile>
     <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setup.aspx.cs">
+      <DependentUpon>Setup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setup.aspx.designer.cs">
+      <DependentUpon>Setup.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

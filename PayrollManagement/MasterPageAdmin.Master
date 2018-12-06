@@ -43,7 +43,7 @@
 <li><a href="Notification.aspx">
     <asp:ImageButton ID="ImageButton7" runat="server" Height="30px" ImageAlign="AbsMiddle" ImageUrl="~/images/icons/notifyicon.png" Width="32px" />
     Notification</a></li>
-    <li><a href="">
+    <li><a href="Setup.aspx">
         <asp:ImageButton ID="ImageButton8" runat="server" Height="27px" ImageAlign="AbsMiddle" ImageUrl="~/images/icons/settingsicon.png" Width ="29px" />
         Environment
         </a></li>
