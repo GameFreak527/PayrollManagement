@@ -42,8 +42,8 @@
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Software_ProjectDBConnectionString %>" SelectCommand="SELECT DISTINCT hourlyPayRate, COUNT(hourlyPayRate) AS theCount FROM Employee GROUP BY hourlyPayRate"></asp:SqlDataSource>
        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="EmployeeID" DataSourceID="SqlDataSource2" Width="384px">
             <Columns>
-                <asp:BoundField DataField="EmployeeID" HeaderText="Employee ID" InsertVisible="False" ReadOnly="True" SortExpression="EmployeeID" />
-                <asp:BoundField DataField="hourlyPayRate" HeaderText="Hourly Pay Rate" SortExpression="hourlyPayRate" DataFormatString="{0:C}" />
+                <asp:BoundField DataField="EmployeeID" HeaderText="EmployeeID" InsertVisible="False" ReadOnly="True" SortExpression="EmployeeID" />
+                <asp:BoundField DataField="hourlyPayRate" HeaderText="hourlyPayRate" SortExpression="hourlyPayRate" />
             </Columns>
         </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Software_ProjectDBConnectionString %>" SelectCommand="SELECT [EmployeeID], [hourlyPayRate] FROM [Employee]"></asp:SqlDataSource>
