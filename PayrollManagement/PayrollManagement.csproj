@@ -165,6 +165,7 @@
     </Compile>
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Exceptions\InvalidAgeGroup.cs" />
+    <Compile Include="Model\MiscClass.cs" />
     <Compile Include="Model\PaystubInfo.cs" />
     <Compile Include="Model\TaxManagement.cs" />
     <Compile Include="Notification.aspx.cs">

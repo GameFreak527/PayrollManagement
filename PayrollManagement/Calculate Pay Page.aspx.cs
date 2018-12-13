@@ -10,6 +10,24 @@ namespace PayrollManagement
 {
     public partial class Calculate_Pay_Page : System.Web.UI.Page
     {
+        protected override void OnPreInit(EventArgs e)
+        {
+            //Checks which user is entering the system and chooses the master pages for them
+            int postion = MiscClass.position;
+            if (postion == 3)
+            {
+                MasterPageFile = "~/MasterPageAdmin.Master";
+            }
+            else if (postion == 2)
+            {
+                MasterPageFile = "~/MasterPage.Master";
+            }
+            else
+            {
+                MasterPageFile = "~/MasterPageEmp.Master";
+            }
+        }
+
         public List<PaystubInfo> listOfInfo = new List<PaystubInfo>();
         private double _grossPay;
         private double _totalHours;

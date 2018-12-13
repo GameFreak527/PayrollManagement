@@ -18,11 +18,12 @@
 <h1>
     <asp:Image ID="LibraPay" CssClass="pad" runat="server" Height="65px" ImageUrl="~/images/librapay.jpg" BackColor="#FFFF99" BorderColor="#666666" BorderStyle="Outset" />
     &nbsp;
-    <a href="#" id="login"><asp:ImageButton ID="ImageButton1" CssClass="logo" runat="server" Height="28px" ImageAlign="AbsBottom" ImageUrl="~/images/icons/usericon.png" />
-    your account</a>
-    <a href="Login.aspx" id="login2">
+    <asp:ImageButton ID="ImageButton1" CssClass="logo" runat="server" Height="28px" ImageAlign="AbsBottom" ImageUrl="~/images/icons/usericon.png" />
+    <asp:Button runat="server" Text="Your Account" ID="accountInfo" OnClick="accountInfo_Click" CausesValidation="false"/>
     <asp:ImageButton ID="ImageButton2" runat="server" Height="30px" ImageAlign="AbsBottom" ImageUrl="~/images/icons/logouticon.png" />
-    logout</a></h1>
+    <asp:Button id="login2" runat="server" Text="login" OnClick="login2_Click" CausesValidation="false"/>
+    <asp:ImageButton ID="passChange" runat="server" Height="20px" ImageAlign="AbsBottom" ImageUrl="~/images/changePassword.png" Visible="false" OnClick="passChange_Click"/>
+</h1>
 </div>
 
 <div id="menuAdmin">
