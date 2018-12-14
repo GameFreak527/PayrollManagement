@@ -67,33 +67,41 @@ namespace PayrollManagement
 
         protected void btnView_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(txtEmpId.Text))
+            try
             {
-                String source = @"Data Source=GAMEFREAK;Initial Catalog=Software_ProjectDB;Integrated Security=True";
-                SqlConnection conn = new SqlConnection(source);
-
-                conn.Open();
-                String queryDisplay = "SELECT * FROM Employee WHERE EmployeeID = " + int.Parse(txtEmpId.Text);
-                SqlCommand cmd = new SqlCommand(queryDisplay, conn);
-                SqlDataReader mdr = cmd.ExecuteReader();
-
-                if (mdr.Read())
+                if (!String.IsNullOrEmpty(txtEmpId.Text))
                 {
-                    txtFname.Text = mdr["firstName"].ToString();
-                    txtLname.Text = mdr["lastName"].ToString();
-                    txtPhone.Text = mdr["phoneNum"].ToString();
-                    txtEmail.Text = mdr["email"].ToString();
-                    lblSSN.Visible = true;
-                    lblSSN.Text = mdr["social_security_num"].ToString();
-                    txtAdd1.Text = mdr["address"].ToString();
-                }
-                conn.Close();
+                    String source = @"Data Source=GAMEFREAK;Initial Catalog=Software_ProjectDB;Integrated Security=True";
+                    SqlConnection conn = new SqlConnection(source);
 
+                    conn.Open();
+                    String queryDisplay = "SELECT * FROM Employee WHERE EmployeeID = " + int.Parse(txtEmpId.Text);
+                    SqlCommand cmd = new SqlCommand(queryDisplay, conn);
+                    SqlDataReader mdr = cmd.ExecuteReader();
+
+                    if (mdr.Read())
+                    {
+                        txtFname.Text = mdr["firstName"].ToString();
+                        txtLname.Text = mdr["lastName"].ToString();
+                        txtPhone.Text = mdr["phoneNum"].ToString();
+                        txtEmail.Text = mdr["email"].ToString();
+                        lblSSN.Visible = true;
+                        lblSSN.Text = mdr["social_security_num"].ToString();
+                        txtAdd1.Text = mdr["address"].ToString();
+                    }
+                    conn.Close();
+
+                }
+                else
+                {
+                    lblViewWarning.Visible = true;
+                    lblViewWarning.Text = "You must enter employee ID";
+                }
             }
-            else
+            catch (Exception)
             {
                 lblViewWarning.Visible = true;
-                lblViewWarning.Text = "You must enter employee ID";
+                lblViewWarning.Text = "Please enter valid employee ID";
             }
         }
 
