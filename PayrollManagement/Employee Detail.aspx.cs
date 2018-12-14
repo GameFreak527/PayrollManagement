@@ -56,6 +56,10 @@ namespace PayrollManagement
                     else
                     {
                         btnEdit.Visible = false;
+                        btnView.Visible = false;
+                        txtEmpId.Visible = false;
+                        lblEmployeeId.Visible = false;
+                        btnSave.Visible = false;
                     }
                 }
             }

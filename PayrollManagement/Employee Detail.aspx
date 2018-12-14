@@ -7,7 +7,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="lblViewWarning" runat="server" ForeColor="Red" visible="false" Text="view Warning"></asp:Label>
             <br />
-            <asp:Label ID="Label6" runat="server" Text="Employee ID:"></asp:Label>
+            <asp:Label ID="lblEmployeeId" runat="server" Text="Employee ID:"></asp:Label>
             &nbsp;&nbsp;&nbsp;<asp:TextBox ID="txtEmpId" runat="server"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;
             <asp:Button CssClass="button" ID="btnView" runat="server" Text="View" OnClick="btnView_Click" Width="121px" />
