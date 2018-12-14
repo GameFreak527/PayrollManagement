@@ -53,7 +53,7 @@ namespace PayrollManagement
             }
             if(rootUser==null||result==0)
             {
-                resultLabel.Text = "Failed to register!";
+                resultLabel.Text = "Registration Succeeded!";
             }
             else
             {

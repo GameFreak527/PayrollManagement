@@ -178,6 +178,33 @@ namespace PayrollManagement.Controller
             return employee;
         }
 
+        public static bool isEmployeeEmail(string email)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Select * from Employee where Email=@email", con);
+                cmd.Parameters.Add("@email", System.Data.SqlDbType.VarChar);
+                cmd.Parameters["@email"].Value = email;
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    con.Close();
+                    return true;
+                }
+                else
+                {
+                    con.Close();
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+        }
+
         public static void insertHours(int employeeId, String clockInTime, String clockOutTime)
         {
 

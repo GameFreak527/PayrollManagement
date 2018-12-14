@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PayrollManagement.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
@@ -37,30 +38,38 @@ namespace PayrollManagement
         {
             SmtpClient smtpClient = new SmtpClient();
             MailMessage message = new MailMessage();
-            try
+            if (Database.isEmployeeEmail(toAddressTxtBox.Text))
             {
-                // Prepare receiving email address
-                message.To.Add(new MailAddress(
-                    toAddressTxtBox.Text, "To You"));
-                // Prepare sending email address
-                message.From = new MailAddress(
-                    "testmail.fuad@gmail.com", "Libra Pay");
-                message.Subject = subjectTxtBox.Text;
-                message.Body = messageTxtBox.Text +
-                    "<br/><br/>------------------------------------<br/>";
-                message.IsBodyHtml = true;
-                // Set server details
-                smtpClient.Host = "smtp.gmail.com";
-                // Send the email
-                smtpClient.Send(message);
-                // Inform the user
-                resultLabel.Text = "Email sent.";
+                try
+                {
+                    // Prepare receiving email address
+                    message.To.Add(new MailAddress(
+                        toAddressTxtBox.Text, "To You"));
+                    // Prepare sending email address
+                    message.From = new MailAddress(
+                        "testmail.fuad@gmail.com", "Libra Pay");
+                    message.Subject = subjectTxtBox.Text;
+                    message.Body = messageTxtBox.Text +
+                        "<br/><br/>------------------------------------<br/>";
+                    message.IsBodyHtml = true;
+                    // Set server details
+                    smtpClient.Host = "smtp.gmail.com";
+                    // Send the email
+                    smtpClient.Send(message);
+                    // Inform the user
+                    resultLabel.Text = "Email sent.";
+                }
+                catch
+                {
+                    // Display error message
+                    resultLabel.Text = "Coudn't send the message!";
+                }
             }
-            catch
+            else
             {
-                // Display error message
-                resultLabel.Text = "Coudn't send the message!";
+                resultLabel.Text = "Please Enter Employee Email.";
             }
+
         }
 
         protected void clear_Click(object sender, EventArgs e)
