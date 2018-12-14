@@ -70,6 +70,7 @@
     <Content Include="Calculate Pay Page.aspx" />
     <Content Include="Create Employee Schedule.aspx" />
     <Content Include="Custom Paystub Page.aspx" />
+    <Content Include="EmpDisplay.aspx" />
     <Content Include="Employee Detail.aspx" />
     <Content Include="MasterPage.Master" />
     <Content Include="MasterPageEmp.Master" />
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="Custom Paystub Page.aspx.designer.cs">
       <DependentUpon>Custom Paystub Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpDisplay.aspx.cs">
+      <DependentUpon>EmpDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpDisplay.aspx.designer.cs">
+      <DependentUpon>EmpDisplay.aspx</DependentUpon>
     </Compile>
     <Compile Include="Employee Detail.aspx.cs">
       <DependentUpon>Employee Detail.aspx</DependentUpon>
