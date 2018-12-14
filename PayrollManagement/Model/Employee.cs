@@ -18,6 +18,7 @@ namespace PayrollManagement.Model
         private int employeeId;
         private String password;
         private double payRate;
+        private int active;
 
 
         public double PayRate { get => payRate; set => payRate = value; }
@@ -30,6 +31,7 @@ namespace PayrollManagement.Model
         public int SocialNumber { get => socialNumber; set => socialNumber = value; }
         public int EmployeeId { get => employeeId; set => employeeId = value; }
         public string Password { get => password; set => password = value; }
+        public int Active { get => active; set => active = value; }
 
         public int Age
         {

@@ -54,7 +54,7 @@ public partial class Paystub_Employee_Choice_Page : System.Web.UI.Page
 
 
             if (int.TryParse(employeeID, out id) == true && beginningDate != DateTime.MinValue
-                && endDate != DateTime.MinValue && employee != null)
+                && endDate != DateTime.MinValue && employee != null && employee.Active == 1)
             {
                 Session["EmployeeID"] = id;
                 Session["StartDate"] = beginningDate;

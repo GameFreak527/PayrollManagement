@@ -65,7 +65,7 @@ namespace PayrollManagement
                         int.TryParse(averageHoursWorked, out hoursWorked) == true &&
                         int.TryParse(averageShiftsAWeek, out averageShiftNumber) == true &&
                         startTime != DateTime.MinValue
-                       && endTime != DateTime.MinValue && employee != null)
+                       && endTime != DateTime.MinValue && employee != null && employee.Active == 1)
                 {
                     int.TryParse(employeeID, out id);
                     int.TryParse(averageHoursWorked, out hoursWorked);
