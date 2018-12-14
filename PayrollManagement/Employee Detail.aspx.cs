@@ -10,27 +10,54 @@ namespace PayrollManagement
 {
     public partial class Employee_Detail : System.Web.UI.Page
     {
+        private int _employeeID;
         protected override void OnPreInit(EventArgs e)
         {
-            //Checks which user is entering the system and chooses the master pages for them
-            int postion = Model.MiscClass.position;
-            if (postion == 3)
+            if (Session["employee"] != null)
             {
-                MasterPageFile = "~/MasterPageAdmin.Master";
-            }
-            else if (postion == 2)
-            {
-                MasterPageFile = "~/MasterPage.Master";
-            }
-            else
-            {
-                MasterPageFile = "~/MasterPageEmp.Master";
+                //Checks which user is entering the system and chooses the master pages for them
+                int postion = Model.MiscClass.position;
+                if (postion == 3)
+                {
+                    MasterPageFile = "~/MasterPageAdmin.Master";
+                }
+                else if (postion == 2)
+                {
+                    MasterPageFile = "~/MasterPage.Master";
+                }
+                else
+                {
+                    MasterPageFile = "~/MasterPageEmp.Master";
+                }
             }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["employee"] != null)
+            {
+                Employee employee = (Employee)Session["employee"];
+                _employeeID = employee.EmployeeId;
+                String source = @"Data Source=GAMEFREAK;Initial Catalog=Software_ProjectDB;Integrated Security=True";
+                SqlConnection conn = new SqlConnection(source);
 
+                conn.Open();
+                String queryDisplay = "SELECT Title FROM Employee WHERE EMPLOYEE_ID = " + _employeeID;
+                SqlCommand cmd = new SqlCommand(queryDisplay, conn);
+                SqlDataReader mdr = cmd.ExecuteReader();
+                if (mdr.Read())
+                {
+                    string title = mdr["Title"].ToString();
+                    if (title == "2")
+                    {
+                        btnEdit.Visible = true;
+                    }
+                    else
+                    {
+                        btnEdit.Visible = false;
+                    }
+                }
+            }
         }
 
         protected void btnView_Click(object sender, EventArgs e)
