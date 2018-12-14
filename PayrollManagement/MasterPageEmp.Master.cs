@@ -55,7 +55,7 @@ namespace PayrollManagement
 
         protected void accountInfo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Employee Detail.aspx");
+            Response.Redirect("EmpDisplay.aspx");
         }
     }
 }
