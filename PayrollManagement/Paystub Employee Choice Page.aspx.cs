@@ -13,6 +13,25 @@ public partial class Paystub_Employee_Choice_Page : System.Web.UI.Page
 
     }
 
+    protected override void OnPreInit(EventArgs e)
+    {
+        //Checks which user is entering the system and chooses the master pages for them
+        int postion = MiscClass.position;
+        if (postion == 3)
+        {
+            MasterPageFile = "~/MasterPageAdmin.Master";
+        }
+        else if (postion == 2)
+        {
+            MasterPageFile = "~/MasterPage.Master";
+        }
+        else
+        {
+            MasterPageFile = "~/MasterPageEmp.Master";
+        }
+    }
+
+
 
 
 
@@ -35,7 +54,7 @@ public partial class Paystub_Employee_Choice_Page : System.Web.UI.Page
 
 
             if (int.TryParse(employeeID, out id) == true && beginningDate != DateTime.MinValue
-                && endDate != DateTime.MinValue && employee != null)
+                && endDate != DateTime.MinValue && employee != null && employee.Active == 1)
             {
                 Session["EmployeeID"] = id;
                 Session["StartDate"] = beginningDate;

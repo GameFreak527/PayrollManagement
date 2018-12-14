@@ -128,13 +128,14 @@ namespace PayrollManagement.Controller
             return EmployeeId;
         }
 
-        public static int authenticateUser(int employeeId, String password)
+        public static Employee authenticateUser(int employeeId, String password)
         {
-            int EmployeeId = 0;
+            Employee employee = new Employee();
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Select EmployeeId from Employee where EmployeeID=@employeeId and Password=@password", con);
+                // SqlCommand cmd = new SqlCommand("Select EmployeeId, Title from Employee where EmployeeID=@employeeId and Password=@password", con);
+                SqlCommand cmd = new SqlCommand("Select * from Employee where EmployeeID=@employeeId and Password=@password", con);
                 cmd.Parameters.Add("@employeeId", System.Data.SqlDbType.VarChar);
                 cmd.Parameters.Add("@password", System.Data.SqlDbType.VarChar);
 
@@ -146,7 +147,17 @@ namespace PayrollManagement.Controller
                 {
                     while (reader.Read())
                     {
-                        EmployeeId = reader.GetInt32(0);
+                        employee.EmployeeId = reader.GetInt32(0);
+                        employee.FirstName = reader.GetString(1);
+                        employee.LastName = reader.GetString(2);
+                        employee.Age = reader.GetInt32(3);
+                        employee.Position = reader.GetInt32(4);
+                        employee.Address = reader.GetString(5);
+                        employee.PhoneNumber = int.Parse(reader.GetString(6));
+                        employee.Email = reader.GetString(7);
+                        employee.Password = reader.GetString(8);
+                        employee.PayRate = double.Parse(reader.GetValue(9).ToString());
+                        employee.SocialNumber = int.Parse(reader.GetValue(10).ToString());
                     }
                 }
                 else
@@ -164,7 +175,7 @@ namespace PayrollManagement.Controller
             }
 
 
-            return EmployeeId;
+            return employee;
         }
 
         public static void insertHours(int employeeId, String clockInTime, String clockOutTime)

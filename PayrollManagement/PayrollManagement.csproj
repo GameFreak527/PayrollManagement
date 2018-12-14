@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Calculate Pay Page.aspx" />
+    <Content Include="Create Employee Schedule.aspx" />
     <Content Include="Custom Paystub Page.aspx" />
     <Content Include="Employee Detail.aspx" />
     <Content Include="MasterPage.Master" />
@@ -104,6 +105,13 @@
     </Compile>
     <Compile Include="Calculate Pay Page.aspx.designer.cs">
       <DependentUpon>Calculate Pay Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Create Employee Schedule.aspx.cs">
+      <DependentUpon>Create Employee Schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create Employee Schedule.aspx.designer.cs">
+      <DependentUpon>Create Employee Schedule.aspx</DependentUpon>
     </Compile>
     <Compile Include="Custom Paystub Page.aspx.cs">
       <DependentUpon>Custom Paystub Page.aspx</DependentUpon>
@@ -165,6 +173,7 @@
     </Compile>
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Exceptions\InvalidAgeGroup.cs" />
+    <Compile Include="Model\MiscClass.cs" />
     <Compile Include="Model\PaystubInfo.cs" />
     <Compile Include="Model\TaxManagement.cs" />
     <Compile Include="Notification.aspx.cs">

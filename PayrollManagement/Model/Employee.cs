@@ -18,6 +18,7 @@ namespace PayrollManagement.Model
         private int employeeId;
         private String password;
         private double payRate;
+        private int active;
 
 
         public double PayRate { get => payRate; set => payRate = value; }
@@ -28,8 +29,9 @@ namespace PayrollManagement.Model
         public long PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string Email { get => email; set => email = value; }
         public int SocialNumber { get => socialNumber; set => socialNumber = value; }
-        public int EmployeeId { get => employeeId; }
+        public int EmployeeId { get => employeeId; set => employeeId = value; }
         public string Password { get => password; set => password = value; }
+        public int Active { get => active; set => active = value; }
 
         public int Age
         {
@@ -66,6 +68,10 @@ namespace PayrollManagement.Model
             this.Address = address;
             this.PhoneNumber = phoneNumber;
             this.Email = email;
+        }
+
+        public Employee()
+        {
         }
 
         public enum POSITION

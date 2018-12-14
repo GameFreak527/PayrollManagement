@@ -10,6 +10,24 @@ namespace PayrollManagement
 {
     public partial class Employee_Detail : System.Web.UI.Page
     {
+        protected override void OnPreInit(EventArgs e)
+        {
+            //Checks which user is entering the system and chooses the master pages for them
+            int postion = Model.MiscClass.position;
+            if (postion == 3)
+            {
+                MasterPageFile = "~/MasterPageAdmin.Master";
+            }
+            else if (postion == 2)
+            {
+                MasterPageFile = "~/MasterPage.Master";
+            }
+            else
+            {
+                MasterPageFile = "~/MasterPageEmp.Master";
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

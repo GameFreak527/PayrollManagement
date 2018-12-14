@@ -24,7 +24,6 @@
                     </td>
                     <td>
                         <asp:DropDownList ID="provinceList" runat="server"/>
-                        <asp:RequiredFieldValidator ID="toAddressValidator" runat="server" ErrorMessage="Address Required" ControlToValidate="toAddressTxtBox"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>

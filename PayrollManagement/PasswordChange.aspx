@@ -9,7 +9,7 @@
             <h1>
             Change your password to the new one
         </h1>
-            <div id="Content" style="margin-left:50%">
+            <div id="Content" style="margin-left:auto">
                 <table style="width:300px">
                     <tr>
                         <td>

@@ -119,9 +119,10 @@ public static class ConnectionClass
         string lastName = "";
         string social = "";
         string pay = "";
+        int active = 0;
 
         List<PaystubInfo> listOfShifts = new List<PaystubInfo>();
-        string query = string.Format(@"SELECT EmployeeID, FirstName, LastName, Social_Security_Num, hourlyPayRate FROM Employee WHERE EmployeeID={0}", Employee_ID);
+        string query = string.Format(@"SELECT EmployeeID, FirstName, LastName, Social_Security_Num, hourlyPayRate, active FROM Employee WHERE EmployeeID={0}", Employee_ID);
         cmd = new SqlCommand(query, cn);
         try
         {
@@ -136,11 +137,13 @@ public static class ConnectionClass
                     lastName = reader["LastName"].ToString();
                     pay = reader["hourlyPayRate"].ToString();
                     social = reader["Social_Security_Num"].ToString();
+                    active = (int)reader["active"];
                 }
 
                 Employee employee = new Employee(firstName, lastName, 14, "", 0, "");
                 employee.SocialNumber = Convert.ToInt32(social);
                 employee.PayRate = Convert.ToDouble(pay);
+                employee.Active = active;
 
                 reader.Close();
 
@@ -159,6 +162,7 @@ public static class ConnectionClass
             cn.Close();
         }
     } //end of class
+
 
 
 
@@ -196,5 +200,37 @@ public static class ConnectionClass
         }
 
         return value;
+    }
+
+
+
+    public static void AddSchedule(string startTime, string endTime, int id)
+    {
+
+        SqlCommand cmd = new SqlCommand(@"insert into [Schedule] (EmployeeID,StartTime,EndTime) values(@employeeId,@clockInTime,@clockOutTime)", cn);
+
+        cmd.Parameters.Add("@employeeId", System.Data.SqlDbType.Int);
+        cmd.Parameters.Add("@clockInTime", System.Data.SqlDbType.VarChar);
+        cmd.Parameters.Add("@clockOutTime", System.Data.SqlDbType.VarChar);
+
+        cmd.Parameters["@employeeId"].Value = id;
+        cmd.Parameters["@clockInTime"].Value = startTime;
+        cmd.Parameters["@clockOutTime"].Value = endTime;
+
+        try
+        {
+            cn.Open();
+            cmd.ExecuteNonQuery();
+
+
+        }
+        catch (SqlException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        finally
+        {
+            cn.Close();
+        }
     }
 }
