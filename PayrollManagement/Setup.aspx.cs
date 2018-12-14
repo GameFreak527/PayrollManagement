@@ -37,6 +37,11 @@ namespace PayrollManagement
             {
                 resultLabel.Text = "Failed to register!";
             }
+            else
+            {
+                Application["Country"] = countryList.SelectedValue;
+                Application["Province"] = provinceList.SelectedValue;
+            }
         }
     }
 }
